@@ -8,7 +8,23 @@ app.set('view engine', 'hbs')
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'Weather',
+        name: 'Abhinaw Tiwari'        
+    })
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'About Me',
+        name: 'Abhinaw Tiwari'
+    })
+})
+
+app.get('/help', (req, res) => {
+    res.render('help', {
+        message: 'This is a help text.'
+    })
 })
 
 app.get('/weather', (req, res) => {
